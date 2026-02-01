@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Health Advisor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<!-- NEW -->
+<script src="https://unpkg.com/@tensorflow/tfjs@4.8.0/dist/tf.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="container">
+  <h1>🧠 AI Health Advisor</h1>
+
+  <div class="card">
+    <label>⏰ Wake-up Time (HH:MM)</label>
+    <input type="time" id="wake">
+
+    <label>💧 Water Intake (glasses)</label>
+    <input type="number" id="water" min="0" value="0">
+
+    <label>🍽 Food Type</label>
+    <select id="food">
+      <option value="2">Healthy</option>
+      <option value="1">Normal</option>
+      <option value="0">Junk</option>
+    </select>
+
+    <label>🏃 Activity</label>
+    <select id="activity">
+      <option value="0">None</option>
+      <option value="1">Light</option>
+      <option value="2">Workout</option>
+    </select>
+
+    <label>😣 Body Issue</label>
+    <select id="problem">
+      <option>None</option>
+      <option>Low Energy</option>
+      <option>Headache</option>
+      <option>Stress</option>
+      <option>Poor Sleep</option>
+    </select>
+
+    <button onclick="analyze()">Analyze Today</button>
+  </div>
+
+  <div class="card">
+    <h3>🔥 Health Streak: <span id="streak">0</span> days</h3>
+  </div>
+
+  <div class="card output">
+    <h3>🤖 AI Daily Health Report</h3>
+    <pre id="output"></pre>
+  </div>
+</div>
+
+<script src="ml.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
